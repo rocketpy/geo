@@ -23,11 +23,10 @@ nom=ArcGIS()
 # check some address
 n=nom.geocode("# input some address ")
 
-df=pd.read_csv("supermarkets.csv")
+df=pd.read_csv("file_name.csv")
 df["Address"]=df["Address"]+", "+df["City"]+", "+df["State"]+", "+df["Country"]
 
 df["Coordinates"]=df["Address"].apply(nom.geocode)
-print(df)
 
 df.Coordinates[0].latitude
 
