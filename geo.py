@@ -1,5 +1,9 @@
 # https://pypi.org/project/geocoder/1.0.6/  check a new version !!! 
 # pip install geocoder
+# https://pypi.org/project/geo-py/  - GeoPy
+# http://geopandas.org/install.html  - GeoPandas 
+# https://docs.djangoproject.com/en/2.2/ref/contrib/gis/install/  - GeoDjango
+
 import geocoder
 
 
