@@ -3,6 +3,8 @@
 # https://pypi.org/project/geo-py/  - GeoPy
 # http://geopandas.org/install.html  - GeoPandas 
 # https://docs.djangoproject.com/en/2.2/ref/contrib/gis/install/  - GeoDjango
+# https://pypi.org/project/Orange3-Geo/  -  Orange add-on for dealing with geography and geo-location.
+# https://automating-gis-processes.github.io/2017/index.html  -   Automating GIS-processes 
 
 import geocoder
 
