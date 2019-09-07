@@ -62,9 +62,9 @@ geody = "http://www.geody.com/geoip.php?ip=" + ipaddr
 html_page = urllib2.urlopen(geody).read()
 soup = BeautifulSoup.BeautifulSoup(html_page)
 
-# Filter paragraph containing geolocation info.
+# filter paragraph containing geolocation info
 paragraph = soup('p')[3]
 
-# Remove html tags using regex.
+# remove html tags using regex
 geo_txt = re.sub(r'<.*?>', '', str(paragraph))
-print geo_txt[32:].strip()
+print(geo_txt[32:].strip())
