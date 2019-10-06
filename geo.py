@@ -1,8 +1,11 @@
 # https://pypi.org/project/geocoder/1.0.6/  check a new version !!! 
 # pip install geocoder
+
+#  https://pypi.org/project/googlemaps/  - Python Client for Google Maps Services
 # https://pypi.org/project/geo-py/  - GeoPy
 # http://geopandas.org/install.html  - GeoPandas 
 # https://docs.djangoproject.com/en/2.2/ref/contrib/gis/install/  - GeoDjango
+
 # https://pypi.org/project/Orange3-Geo/  -  Orange add-on for dealing with geography and geo-location.
 # https://automating-gis-processes.github.io/2017/index.html  -   Automating GIS-processes 
 
@@ -68,3 +71,20 @@ paragraph = soup('p')[3]
 # remove html tags using regex
 geo_txt = re.sub(r'<.*?>', '', str(paragraph))
 print(geo_txt[32:].strip())
+
+
+# some example for googlemaps module
+"""
+import googlemaps
+from datetime import datetime
+
+
+gmaps = googlemaps.Client(key='Add here  your key')
+
+geocode_result = gmaps.geocode('address, city, country')
+
+reverse_geocode_result = gmaps.reverse_geocode((25.123456, 95.123456))
+
+now = datetime.now()
+result = gmaps.directions("place","district, state", mode="transit", departure_time=now)
+"""
