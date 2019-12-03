@@ -88,3 +88,17 @@ reverse_geocode_result = gmaps.reverse_geocode((25.123456, 95.123456))
 now = datetime.now()
 result = gmaps.directions("place","district, state", mode="transit", departure_time=now)
 """
+
+
+"""
+pip install geopy
+
+
+from geopy import GoogleV3
+
+place = "125 Baker Street, London"
+location = GoogleV3().geocode(place)
+
+print(location.address)
+print(location.location)
+"""
