@@ -8,3 +8,13 @@ location = GoogleV3(api_key="HERE YOUR API KEY", domain="maps.google.ua").geocod
 
 print(location.address)
 print(location.latitude, location.longitude)
+
+# or 
+from geopy import GoogleV3
+
+
+new_place = "157 Baker Street, London"
+location = GoogleV3().geocode(new_place)
+
+print(location.address)
+print(location.location)
