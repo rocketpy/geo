@@ -1,4 +1,5 @@
 # GeoIP2 API
+# This package provides an API for the GeoIP2 and GeoLite2 web services and databases.
 
 # https://pypi.org/project/geoip2/
 
@@ -16,3 +17,11 @@ with geoip2.webservice.Client(42, 'license_key') as client:
     # that you are using, i.e., "country", "city", or "insights". Please
     # note that Insights is not supported by the GeoLite2 web service.
     response = client.city('203.0.113.0')
+
+# response.country.iso_code
+# response.country.name
+# response.country.names['zh-CN']
+
+# response.subdivisions.most_specific.name
+# response.subdivisions.most_specific.iso_code
+
