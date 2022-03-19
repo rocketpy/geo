@@ -25,3 +25,11 @@ with geoip2.webservice.Client(42, 'license_key') as client:
 # response.subdivisions.most_specific.name
 # response.subdivisions.most_specific.iso_code
 
+# response.city.name
+# response.postal.code
+# response.location.latitude
+# response.location.longitude
+# response.traits.network
+
+# IPv4Network('203.0.113.0/32')
+
