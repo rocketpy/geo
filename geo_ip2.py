@@ -38,7 +38,6 @@ with geoip2.webservice.Client(42, 'license_key') as client:
 
 
 #  Async Web Service Example
-
 import asyncio
 import geoip2.webservice
 
@@ -60,5 +59,20 @@ async def main():
         note that Insights is not supported by the GeoLite2 web service.
         """
         response = await client.city('203.0.113.0')
+        """
         response.country.iso_code
+        response.country.name
+        response.country.names['zh-CN']
+        response.subdivisions.most_specific.name
+        response.subdivisions.most_specific.iso_code
+        response.city.name
+        response.postal.code
+        response.location.latitude
+        response.location.longitude
+        response.traits.network
+        """
+# IPv4Network('203.0.113.0/32')
+
+asyncio.run(main())
+
 
