@@ -76,3 +76,19 @@ async def main():
 asyncio.run(main())
 
 
+#  Database Example
+# City Database
+
+import geoip2.database
+>>>
+>>> # This creates a Reader object. You should use the same object
+>>> # across multiple requests as creation of it is expensive.
+>>> with geoip2.database.Reader('/path/to/GeoLite2-City.mmdb') as reader:
+>>>
+>>>     # Replace "city" with the method corresponding to the database
+>>>     # that you are using, e.g., "country".
+>>>     response = reader.city('203.0.113.0')
+>>>
+>>>     response.country.iso_code
+'US'
+>>>     response.country.name
