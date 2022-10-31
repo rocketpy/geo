@@ -13,3 +13,18 @@ crs = CRS.from_epsg(4326)
 crs = CRS.from_string("epsg:4326")
 crs = CRS.from_proj4("+proj=latlon")
 crs = CRS.from_user_input(4326)
+
+
+# Converting CRS to a different format
+from pyproj import CRS
+
+
+crs = CRS.from_epsg(4326)
+print(crs.to_epsg())
+# 4326
+
+print(crs.to_authority())
+# ('EPSG', '4326')
+
+crs = CRS.from_proj4("+proj=omerc +lat_0=-36 +lonc=147 +alpha=-54 +k=1 +x_0=0 +y_0=0 +gamma=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0")
+print(crs)
