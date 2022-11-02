@@ -38,3 +38,8 @@ print(crs.to_wkt(WktVersion.WKT1_GDAL, pretty=True))
 
 from pprint import pprint
 pprint(crs.to_cf())
+
+
+# Extracting attributes from CRS
+crs = CRS("urn:ogc:def:crs,crs:EPSG::2393,crs:EPSG::5717")
+print(crs)
