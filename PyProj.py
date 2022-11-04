@@ -75,3 +75,16 @@ from pyproj import CRS
 crs_4326 = CRS.from_epsg(4326)
 print(crs_4326)
 
+crs_26917 = CRS.from_epsg(26917)
+print(crs_26917)
+
+
+# Create Transformer to convert from CRS to CRS
+from pyproj import Transformer
+
+transformer = Transformer.from_crs(crs_4326, crs_26917)
+transformer = Transformer.from_crs(4326, 26917)
+transformer = Transformer.from_crs("EPSG:4326", "EPSG:26917")
+
+print(transformer.transform(50, -80))
+
