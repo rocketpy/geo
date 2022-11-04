@@ -68,3 +68,10 @@ utm_crs_list = query_utm_crs_info(
 )
 utm_crs = CRS.from_epsg(utm_crs_list[0].code)
 
+
+# Transformations from CRS to CRS
+from pyproj import CRS
+
+crs_4326 = CRS.from_epsg(4326)
+print(crs_4326)
+
