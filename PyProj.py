@@ -88,3 +88,9 @@ transformer = Transformer.from_crs("EPSG:4326", "EPSG:26917")
 
 print(transformer.transform(50, -80))
 
+
+from pyproj import Transformer
+
+transformer = Transformer.from_crs("EPSG:4326", "EPSG:26917", always_xy=True)
+transformer.transform(-80, 50)
+
