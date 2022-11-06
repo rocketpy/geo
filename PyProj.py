@@ -94,3 +94,9 @@ from pyproj import Transformer
 transformer = Transformer.from_crs("EPSG:4326", "EPSG:26917", always_xy=True)
 transformer.transform(-80, 50)
 
+# Converting between geographic and projection coordinates within one datum
+from pyproj import CRS
+
+crs = CRS.from_epsg(3857)
+print(crs)
+
