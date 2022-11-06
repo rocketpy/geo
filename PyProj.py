@@ -99,4 +99,12 @@ from pyproj import CRS
 
 crs = CRS.from_epsg(3857)
 print(crs)
+print(crs.geodetic_crs)
+
+# Create Transformer to convert from geodetic CRS to CRS
+proj = Transformer.from_crs(crs.geodetic_crs, crs)
+
+print(proj)
+print(proj.transform(12, 15))
+
 
