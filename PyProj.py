@@ -101,6 +101,7 @@ crs = CRS.from_epsg(3857)
 print(crs)
 print(crs.geodetic_crs)
 
+
 # Create Transformer to convert from geodetic CRS to CRS
 proj = Transformer.from_crs(crs.geodetic_crs, crs)
 
@@ -108,3 +109,7 @@ print(proj)
 print(proj.transform(12, 15))
 
 
+# 4D Transformations with Time
+transformer = Transformer.from_crs(7789, 8401)
+
+transformer.transform(xx=3496737.2679, yy=743254.4507, zz=5264462.9620, tt=2019.0)
