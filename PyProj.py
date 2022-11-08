@@ -113,3 +113,12 @@ print(proj.transform(12, 15))
 transformer = Transformer.from_crs(7789, 8401)
 
 transformer.transform(xx=3496737.2679, yy=743254.4507, zz=5264462.9620, tt=2019.0)
+
+
+# Geodesic calculations
+
+# Creating Geod class
+from pyproj import CRS, Geod
+
+geod_clrk = Geod(ellps='clrk66')
+geod_wgs84 = CRS("epsg:4326").get_geod()
