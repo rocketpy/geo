@@ -136,3 +136,13 @@ lons = [-74, -102, -102, -131, -163, 163, 172, 140, 113,
 geod = Geod(ellps="WGS84")
 total_length = geod.line_length(lons, lats)
 print(f"{total_length:.3f}")
+
+
+# Calculate the geodesic length of a shapely geometry
+from pyproj import Geod
+from shapely.geometry import Point, LineString
+
+line_string = LineString([Point(1, 2), Point(3, 4)]))
+geod = Geod(ellps="WGS84")
+total_length = geod.geometry_length(line_string)
+print(f"{total_length:.3f}")
