@@ -157,3 +157,22 @@ lats = [-72.9, -71.9, -74.9, -74.3, -77.5, -77.4, -71.7, -65.9, -65.7,
 
 lons = [-74, -102, -102, -131, -163, 163, 172, 140, 113,
         88, 59, 25, -4, -14, -33, -46, -61]
+
+poly_area, poly_perimeter = geod.polygon_area_perimeter(lons, lats)
+print(f"{poly_area:.3f} {poly_perimeter:.3f}")
+
+
+# Calculate the geodesic area and perimeter of a shapely polygon
+from pyproj import Geod
+from shapely.geometry import LineString, Point, Polygon
+
+geod = Geod('+a=6378137 +f=0.0033528106647475126')
+
+poly_area, poly_perimeter = geod.geometry_area_perimeter(
+        Polygon(
+            LineString([Point(1, 1), Point(1, 10), Point(10, 10), Point(10, 1)]),
+            holes=[LineString([Point(1, 2), Point(3, 4), Point(5, 2)])],
+        )
+    )
+
+print(f"{poly_area:.3f} {poly_perimeter:.3f}")
