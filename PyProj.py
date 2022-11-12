@@ -176,3 +176,14 @@ poly_area, poly_perimeter = geod.geometry_area_perimeter(
     )
 
 print(f"{poly_area:.3f} {poly_perimeter:.3f}")
+
+
+# Advanced Examples
+
+# Optimize Transformations
+import numpy as np
+from pyproj import Transformer, transform
+
+transformer = Transformer.from_crs(2263, 4326)
+x_coords = np.random.randint(80000, 120000)
+y_coords = np.random.randint(200000, 250000)
