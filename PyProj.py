@@ -187,3 +187,16 @@ from pyproj import Transformer, transform
 transformer = Transformer.from_crs(2263, 4326)
 x_coords = np.random.randint(80000, 120000)
 y_coords = np.random.randint(200000, 250000)
+
+transform(2263, 4326, x_coords, y_coords)
+transformer.transform(x_coords, y_coords)
+
+
+# Transformation Group
+
+from pyproj.transformer import TransformerGroup
+
+trans_group = TransformerGroup("epsg:4326","epsg:2964")
+print(trans_group)
+
+
