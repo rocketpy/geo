@@ -207,3 +207,15 @@ trans_group.transformers[1].transform(66, -153)
 
 trans_group.transformers[2].transform(66, -153)
 
+
+from pyproj.transformer import TransformerGroup
+
+tg = TransformerGroup("epsg:4326", "+proj=aea +lat_0=50 +lon_0=-154 +lat_1=55 +lat_2=65 +x_0=0 +y_0=0 +datum=NAD27 +no_defs +type=crs +units=m", 
+                      always_xy=True)
+"""
+UserWarning: Best transformation is not available due to missing Grid(short_name=ntv2_0.gsb, full_name=, package_name=proj-datumgrid-north-america,
+                                                                      url=https://download.osgeo.org/proj/proj-datumgrid-north-america-latest.zip,
+                                                                      direct_download=True, open_license=True, available=False)
+"""
+# f"{operation.grids[0]!r}"
+
