@@ -199,4 +199,11 @@ from pyproj.transformer import TransformerGroup
 trans_group = TransformerGroup("epsg:4326","epsg:2964")
 print(trans_group)
 
+trans_group.transformers[0].transform(66, -153)
+(149661.2825058747, 5849322.174897663)
+
+trans_group.transformers[1].transform(66, -153)
+(149672.928811047, 5849311.372139239)
+
+trans_group.transformers[2].transform(66, -153)
 
