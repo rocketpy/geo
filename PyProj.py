@@ -223,4 +223,14 @@ from pyproj.transformer import Transformer, AreaOfInterest
 transformer = Transformer.from_crs("epsg:4326", "epsg:2694")
 print(transformer)
 
+transformer = Transformer.from_crs(
+    "epsg:4326",
+    "epsg:2694",
+    area_of_interest=AreaOfInterest(-136.46, 49.0, -60.72, 83.17),
+)
 
+# Promote CRS to 3D
+from pyproj import CRS, Transformer
+
+transformer = Transformer.from_crs("EPSG:4326", "EPSG:2056", always_xy=True)
+transformer.transform(8.37909, 47.01987, 1000)
