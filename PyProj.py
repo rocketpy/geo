@@ -234,3 +234,18 @@ from pyproj import CRS, Transformer
 
 transformer = Transformer.from_crs("EPSG:4326", "EPSG:2056", always_xy=True)
 transformer.transform(8.37909, 47.01987, 1000)
+
+transformer_3d = Transformer.from_crs(
+    CRS("EPSG:4326").to_3d(),
+    CRS("EPSG:2056").to_3d(),
+    always_xy=True,
+...)
+
+print(transformer_3d.transform(8.37909, 47.01987, 1000))
+
+
+# Projected CRS Bounds
+from pyproj import CRS, Transformer
+
+crs = CRS("EPSG:3857")
+transformer = Transformer.from_crs(crs.geodetic_crs, crs, always_xy=True)
