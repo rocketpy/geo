@@ -249,3 +249,15 @@ from pyproj import CRS, Transformer
 
 crs = CRS("EPSG:3857")
 transformer = Transformer.from_crs(crs.geodetic_crs, crs, always_xy=True)
+transformer.transform_bounds(*crs.area_of_use.bounds)
+
+
+# Multithreading
+import concurrent.futures
+
+from pyproj import Transformer
+
+
+def transform_point(point):
+    transformer = Transformer.from_crs(4326, 3857)
+    return transformer.transform(point, point * 2)
