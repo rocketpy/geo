@@ -261,3 +261,7 @@ from pyproj import Transformer
 def transform_point(point):
     transformer = Transformer.from_crs(4326, 3857)
     return transformer.transform(point, point * 2)
+
+with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+    for result in executor.map(transform_point, range(5)):
+        print(result)
