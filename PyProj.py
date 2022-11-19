@@ -265,3 +265,10 @@ def transform_point(point):
 with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
     for result in executor.map(transform_point, range(5)):
         print(result)
+
+
+# Optimizing Single-Threaded Applications
+import pyproj
+
+codes = pyproj.get_codes("EPSG", pyproj.enums.PJType.PROJECTED_CRS, False)
+crs_list = [pyproj.CRS.from_epsg(code) for code in codes]
