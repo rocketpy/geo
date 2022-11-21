@@ -272,3 +272,15 @@ import pyproj
 
 codes = pyproj.get_codes("EPSG", pyproj.enums.PJType.PROJECTED_CRS, False)
 crs_list = [pyproj.CRS.from_epsg(code) for code in codes]
+
+
+# Caching pyproj objects
+# Transformer
+
+from functools import lru_cache
+from pyproj import Transformer
+
+TransformerFromCRS = lru_cache(Transformer.from_crs)
+
+# Transformer.from_crs(2263, 4326)  # no cache
+# TransformerFromCRS(2263, 4326)
