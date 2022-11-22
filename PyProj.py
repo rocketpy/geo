@@ -284,3 +284,21 @@ TransformerFromCRS = lru_cache(Transformer.from_crs)
 
 # Transformer.from_crs(2263, 4326)  # no cache
 # TransformerFromCRS(2263, 4326)
+
+from timeit import timeit
+
+timeit(
+    "CachedTransformer(2263, 4326)",
+    setup=(
+        "from pyproj import Transformer; "
+        "from functools import lru_cache; "
+        "CachedTransformer = lru_cache(Transformer.from_crs)"
+    ),
+    number=1000000,
+)
+
+timeit(
+    "Transformer.from_crs(2263, 4326)",
+    setup=("from pyproj import Transformer"),
+    number=100,
+)
