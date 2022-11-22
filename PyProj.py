@@ -302,3 +302,14 @@ timeit(
     setup=("from pyproj import Transformer"),
     number=100,
 )
+
+# CRS Example
+
+from functools import lru_cache
+from pyproj import CRS
+
+CachedCRS = lru_cache(CRS)
+
+crs = CRS(4326)  # no cache
+crs = CachedCRS(4326)  # cache
+
