@@ -304,7 +304,6 @@ timeit(
 )
 
 # CRS Example
-
 from functools import lru_cache
 from pyproj import CRS
 
@@ -313,3 +312,20 @@ CachedCRS = lru_cache(CRS)
 crs = CRS(4326)  # no cache
 crs = CachedCRS(4326)  # cache
 
+from timeit import timeit
+
+timeit(
+    "CachedCRS(4326)",
+    setup=(
+        "from pyproj import CRS; "
+        "from functools import lru_cache; "
+        "CachedCRS = lru_cache(CRS)"
+    ),
+    number=1000000,
+)
+
+timeit(
+    "CRS(4326)",
+    setup=("from pyproj import CRS"),
+    number=1000,
+)
