@@ -329,3 +329,14 @@ timeit(
     setup=("from pyproj import CRS"),
     number=1000,
 )
+
+
+# Debugging Internal PROJ
+import logging
+
+console_handler = logging.StreamHandler()
+formatter = logging.Formatter("%(levelname)s:%(message)s")
+console_handler.setFormatter(formatter)
+logger = logging.getLogger("pyproj")
+logger.addHandler(console_handler)
+logger.setLevel(logging.DEBUG)
