@@ -340,3 +340,9 @@ console_handler.setFormatter(formatter)
 logger = logging.getLogger("pyproj")
 logger.addHandler(console_handler)
 logger.setLevel(logging.DEBUG)
+
+
+# Activate default logging config:
+import logging
+
+logging.basicConfig(format="%(levelname)s:%(message)s", level=logging.DEBUG)
