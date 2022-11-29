@@ -44,3 +44,16 @@ m = Map(
     )
 # m
 
+
+# create a Marker layer and interact with it:
+from ipyleaflet import Map, Marker
+
+center = (52.204793, 360.121558)
+
+m = Map(center=center, zoom=15)
+
+marker = Marker(location=center, draggable=True)
+m.add_layer(marker);
+
+display(m)
+marker.location = (50, 356)
