@@ -57,3 +57,11 @@ m.add_layer(marker);
 
 display(m)
 marker.location = (50, 356)
+
+
+# 
+def on_location_changed(event):
+    # Do some computation given the new marker location, accessible from `event['new']`
+    pass
+
+marker.observe(on_location_changed, 'location')
