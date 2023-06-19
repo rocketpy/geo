@@ -14,3 +14,10 @@ import pysat
 from pysatNASA.instruments import icon_ivm
 
 ivm = pysat.Instrument(inst_module=icon_ivm, inst_id='a')
+
+# or
+
+import pysat
+
+pysat.utils.registry.register(['pysatNASA.instruments.icon_ivm'])
+ivm = pysat.Instrument('icon', 'ivm', inst_id='a')
