@@ -1,6 +1,9 @@
 # pysatNASA: pysat support for NASA Space Science instruments
 
 # https://github.com/pysat/pysatNASA
+# https://pypi.org/project/pysatNASA/
+
+# pip install pysatNASA
 # git clone https://github.com/pysat/pysatNASA.git
 
 # Change directories into the repository folder and run the setup.py file.
