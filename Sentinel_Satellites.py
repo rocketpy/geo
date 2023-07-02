@@ -12,3 +12,7 @@ import ee, sentinel_satellites
 
 ee.Authenticate()
 ee.Initialize()
+
+# Then, supposing that you have already loaded the fields_df pandas DataFrame,
+# you have just to run the following code.
+df = sentinel_satellites.get_features(fields_df, "2022-01-01", "2022-12-31", sentinel=2, filters_params=['40'], fields_threads=3)
