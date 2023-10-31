@@ -16,3 +16,15 @@ hdulist = fits.open('data.fits')
 from astropy import units as u
 from astropy import coordinates as coord
 coord.SkyCoord(ra=10.68458*u.deg, dec=41.26917*u.deg, frame='icrs')
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+from astropy.visualization import astropy_mpl_style
+
+plt.style.use(astropy_mpl_style)
+
+# uncomment if including figures:
+# import matplotlib.pyplot as plt
+# from astropy.visualization import astropy_mpl_style
+# plt.style.use(astropy_mpl_style)
