@@ -30,6 +30,8 @@ plt.style.use(astropy_mpl_style)
 # plt.style.use(astropy_mpl_style)
 
 
+# Constants
+
 from astropy.constants import G
 
 print(G)
@@ -40,3 +42,8 @@ Uncertainty  = 1.5e-15
 Unit  = m3 / (kg s2)
 Reference = CODATA 2018
 """
+# or
+from astropy import constants as const
+
+print(const.G)
+# Name   = Gravitational constant
