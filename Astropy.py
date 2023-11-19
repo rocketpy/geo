@@ -28,3 +28,15 @@ plt.style.use(astropy_mpl_style)
 # import matplotlib.pyplot as plt
 # from astropy.visualization import astropy_mpl_style
 # plt.style.use(astropy_mpl_style)
+
+
+from astropy.constants import G
+
+print(G)
+"""
+Name   = Gravitational constant
+Value  = 6.6743e-11
+Uncertainty  = 1.5e-15
+Unit  = m3 / (kg s2)
+Reference = CODATA 2018
+"""
