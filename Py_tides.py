@@ -18,3 +18,22 @@ pip install numpy
 pip install scipy
 pip install pytides
 """
+
+# Example Pytides Usage
+from datetime import datetime
+from pytides.tide import Tide
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+##Prepare our tide data
+station_id = '8516945'
+
+heights = []
+t = []
+
+f = open('data/'+station_id, 'r')
+for i, line in enumerate(f):
+    t.append(datetime.strptime(" ".join(line.split()[:2]), "%Y-%m-%d %H:%M"))
+    heights.append(float(line.split()[2]))
+f.close()
